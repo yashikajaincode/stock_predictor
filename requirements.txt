@@ -6,10 +6,7 @@ requests
 beautifulsoup4
 newspaper3k
 lxml
-<<<<<<< HEAD
 cssselect
-=======
->>>>>>> 98d47b9dc19d25e52e88d73407113aa74a7f89a4
 transformers
 torch
 python-dotenv 
