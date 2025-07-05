@@ -1,0 +1,10 @@
+streamlit
+yfinance
+pandas
+scikit-learn
+requests
+beautifulsoup4
+newspaper3k
+transformers
+torch
+python-dotenv 
