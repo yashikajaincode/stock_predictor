@@ -5,6 +5,7 @@ scikit-learn
 requests
 beautifulsoup4
 newspaper3k
+lxml
 transformers
 torch
 python-dotenv 
