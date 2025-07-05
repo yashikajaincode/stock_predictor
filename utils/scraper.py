@@ -1,10 +1,17 @@
 import yfinance as yf
 import pandas as pd
-from newspaper import Article
 import requests
 from typing import List, Optional
 import os
 from dotenv import load_dotenv
+
+# Optional import for newspaper3k (used only for URL scraping)
+try:
+    from newspaper import Article
+    NEWSPAPER_AVAILABLE = True
+except ImportError:
+    NEWSPAPER_AVAILABLE = False
+    print("Warning: newspaper3k not available. URL scraping will be disabled.")
 
 # Load environment variables
 load_dotenv()
@@ -40,7 +47,13 @@ def fetch_news_from_url(url: str) -> str:
     """
     Scrape the main text from a news article URL.
     """
-    article = Article(url)
-    article.download()
-    article.parse()
-    return article.text 
+    if not NEWSPAPER_AVAILABLE:
+        return "Newspaper3k not available for URL scraping"
+    
+    try:
+        article = Article(url)
+        article.download()
+        article.parse()
+        return article.text
+    except Exception as e:
+        return f"Error scraping article: {str(e)}" 
