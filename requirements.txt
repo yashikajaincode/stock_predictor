@@ -9,4 +9,4 @@ lxml
 cssselect
 transformers
 torch
-python-dotenv 
+python-dotenv
